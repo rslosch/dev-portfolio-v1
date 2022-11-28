@@ -10,6 +10,7 @@ function App() {
     <div className="max-w-5xl w-11/12 mx-auto">
       <Intro />
       <Portfolio />
+      <Footer />
     </div>
   )
 }
