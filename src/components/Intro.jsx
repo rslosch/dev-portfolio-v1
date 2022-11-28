@@ -2,7 +2,7 @@ import React from 'react'
 
 const Intro = () => {
   return (
-    <div>Intro</div>
+    <div className="flex items-center justify-center flex-col text-center pt-20 pb-6 ">Intro</div>
   )
 }
 
