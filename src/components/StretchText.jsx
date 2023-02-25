@@ -29,7 +29,7 @@ const StretchText = ({text, indexStretch }) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         whileHover={{x:"-10%", scaleX: 0.8, transition: {duration: 0.3, type: 'spring', damping: 8}}}
-        className={`relative min-w-3/5 flex uppercase font-semibold text-4xl md:text-7xl mb-1 md:mb-2`}
+        className={`min-w-3/5 flex uppercase font-semibold text-4xl md:text-7xl mb-1 md:mb-2`}
     > 
         <div className='relative flex'>
             {characters}
