@@ -6,15 +6,15 @@ export default [
         link: 'TBD'
     },
     {
-        title: 'FullStack App #2',
-        imgUrl: '',
-        stack: ['HTML', 'CSS', 'Javascript', 'React', 'Ruby on Rails'],
+        title: 'Cards Against Insanity',
+        imgUrl: '/assets/cards-for-insanity-app.png',
+        stack: ['HTML', 'TailwindCSS', 'Framer Motion', 'Javascript', 'React', 'Ruby on Rails'],
         link: 'TBD'
     },
     {
-        title: 'Developer Portfolio',
-        imgUrl: '',
-        stack: ['React', 'TailWindCSS', 'Vite'],
+        title: 'JobKanban',
+        imgUrl: '/assets/jobkanban-app.png',
+        stack: ['React', 'TailWindCSS', 'React dndKit','Javascript', 'Ruby on Rails'],
         link: 'TBD'
     }
 ]
