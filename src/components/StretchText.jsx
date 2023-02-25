@@ -6,39 +6,43 @@ import { motion } from 'framer-motion'
 const StretchText = ({text, indexStretch }) => {
 
     const [hover, setHover] = useState(false)
-    
-    const stretchVariants = {
-        hover: { scaleX: 1.5 }
-    }
 
     const characters = text.split('').map((letter, index) => {
         if (indexStretch.includes(index)) {
             return (
-                <motion.div
+                <motion.h1
                     key={index}
                     layout
-                    transition={{type: 'spring', damping: 4.3}}
-                    className={`text-primary-green-1 ${hover ? "" : 'mx-4'}`}
-
-
-                    style={{ scaleX: hover? 1 : 1.85}}
-                >{letter}</motion.div>
+                    transition={{type: 'spring', damping: 5.5}}
+                    style={{ scaleX: hover? 1 : 1.5}}
+                    className={`text-secondary-1 ${hover ? "self-end" : "self-center mx-2"} `}
+                >{letter}</motion.h1>
+            )
+        } else {
+            return (
+                <motion.h1 layout key={index}  className="self-center">{letter}</motion.h1>
             )
         }
-        return (
-            <motion.div layout key={index}  className="self-center">{letter}</motion.div>
-        )
     })
-
   return (
     <motion.div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        whileHover={{x:"-10%", scaleX: 0.8, transition: {duration: 0.3, type: 'spring', damping: 4.8}}}
-        className={`min-w-2/5 top-0 flex ${hover ? 'justify-start' : 'justify-start'} uppercase text-4xl md:text-7xl mb-1 md:mb-3 font-medium m-4 left-0`}
-    >     
-        {characters}
+        whileHover={{x:"-10%", scaleX: 0.8, transition: {duration: 0.3, type: 'spring', damping: 8}}}
+        className={`relative min-w-3/5 flex uppercase font-semibold text-4xl md:text-7xl mb-1 md:mb-2`}
+    > 
+        <div className='relative flex'>
+            {characters}
+            <motion.div 
+                initial={{width: 0 }}
+                animate={{width: hover ? "100%" : 0, backgroundPosition: ["-100%", "100%"]}}
+                transition={{duration: 0.5, ease: "easeInOut"}}
+                className="absolute h-1 left-0 bottom-0  bg-gradient-to-r from-secondary-5 via-primary-gray-3 to-primary-4 bg-left bg-[length:800px_10px] "
+            >
+            </motion.div>
+        </div>   
     </motion.div>
+    
   )
 }
 
