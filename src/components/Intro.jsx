@@ -1,18 +1,18 @@
-import React, {memo} from 'react'
+import React from 'react'
 
 import StretchText from './StretchText'
 
 // Use memo to avoid re-render when custom cursor pointer state is being changed.
-const Intro = memo(() => {
+const Intro = () => {
   return (
-    <div className=" flex items-start justify-center flex-col text-center mx-16 pt-20 pb-6 font-syne">
+    <div className="flex items-start justify-center flex-col text-center mx-16 pt-20 pb-6 font-syne">
       <StretchText text="steven" indexStretch={[0,2,4]}/>
       <StretchText text="welcome" indexStretch={[1,3,5]}/>
       <StretchText text="projects" indexStretch={[0,1,4]}/>
       <StretchText text="contact" indexStretch={[0,2,5]}/>
     </div>
   )
-})
+}
 
 export default Intro
 
