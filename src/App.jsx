@@ -1,17 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import Intro from './components/Intro'
 import Portfolio from './components/Portfolio'
 import Footer from './components/Footer'
+import blobsData from './data/blobs'
 import Blobs from './components/Blobs'
+
+import { motion } from 'framer-motion'
 // import { SunIcon, MoonIcon } from './data/icons'
 
 function App() {
+	const displayBlobs = blobsData.map(blob => {
+		return (
+			<Blobs 
+				color1={blob.color1}
+				color2={blob.color2}
+				xPos={blob.xPos}
+				yPos={blob.yPos}
+				dAttrValues={blob.dAttrValues}
+			/>
+		)
+	})
   return (
       <div className="relative text-secondary-1 bg-primary-gray-4 min-h-screen font-syne">
-		<Blobs 
-			color1="rgb(260, 260, 260)" color2="rgb(100, 80, 20)" 
-			dAttrValues={"M396.5,297.5Q381,345,348.5,398.5Q316,452,252,446.5Q188,441,153,393.5Q118,346,104,298Q90,250,80.5,185Q71,120,129.5,90Q188,60,256.5,39.5Q325,19,348.5,90.5Q372,162,392,206Q412,250,396.5,297.5Z; M447.5,312.5Q422,375,370,417.5Q318,460,255.5,443.5Q193,427,129.5,405.5Q66,384,74,317Q82,250,92,196.5Q102,143,145,101Q188,59,247,69Q306,79,368.5,98.5Q431,118,452,184Q473,250,447.5,312.5Z; M420.5,298.5Q383,347,347.5,393.5Q312,440,251,438Q190,436,150.5,393.5Q111,351,98,300.5Q85,250,106,205.5Q127,161,158,112Q189,63,257,41.5Q325,20,375.5,71Q426,122,442,186Q458,250,420.5,298.5Z; M427.5,304Q399,358,352,388.5Q305,419,243,441.5Q181,464,153.5,402Q126,340,65,295Q4,250,59,201Q114,152,155,117.5Q196,83,247,93Q298,103,340.5,128Q383,153,419.5,201.5Q456,250,427.5,304Z; M396.5,297.5Q381,345,348.5,398.5Q316,452,252,446.5Q188,441,153,393.5Q118,346,104,298Q90,250,80.5,185Q71,120,129.5,90Q188,60,256.5,39.5Q325,19,348.5,90.5Q372,162,392,206Q412,250,396.5,297.5Z;"} 
-		/>
+		{displayBlobs}
 		<Intro />
 		{/* <Portfolio /> */}
 		{/* <Footer /> */}
