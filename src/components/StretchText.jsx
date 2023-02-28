@@ -16,8 +16,8 @@ const StretchText = ({text, indexStretch }) => {
                     // transition={{type: 'spring', damping: 5.5}}
                     transition={{duration: 0.1, type: 'spring', stiffness: 50}}
 
-                    style={{ scaleX: hover? 1 : 1.5}}
-                    className={`text-secondary-1 ${hover ? "self-end" : "self-center mx-2"} `}
+                    style={{ scaleX: hover? 1 : 1.8}}
+                    className={`text-secondary-1 ${hover ? "self-end" : "self-center mx-4"} `}
                 >{letter}</motion.h1>
             )
         } else {
@@ -41,7 +41,7 @@ const StretchText = ({text, indexStretch }) => {
                 initial={{width: 0 }}
                 animate={{width: hover ? "100%" : 0, backgroundPosition: ["-100%", "100%"]}}
                 transition={{duration: 0.5, ease: "easeInOut"}}
-                className="absolute h-1 left-0 bottom-0  bg-gradient-to-r from-secondary-5 via-primary-gray-3 to-primary-4 bg-left bg-200% "
+                className="absolute h-1 left-0 bottom-0  bg-gradient-to-r from-violet-500 via-pink-gray-500 to-violet-500 bg-left bg-[length:400px_10px]% "
             >
             </motion.div>
         </div>   

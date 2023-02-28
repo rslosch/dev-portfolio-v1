@@ -76,7 +76,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed w-full bg-transparent flex justify-end z-[502] p-8'>
+    <div className='w-full bg-transparent flex justify-end z-[502] p-8'>
       <button className="relative group" onClick={handleClick}>
         <div className={`relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-transparent ring-0 ring-white hover:ring-4 hover:ring-primary-3 ${isOpen ? 'ring-opacity-30' : ''} duration-200 shadow-md`}>
           <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={parent} className='flex flex-col justify-between w-[20px] h-[20px] overflow-hidden'>
