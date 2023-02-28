@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const handleClick = () => {
     setIsOpen(!isOpen)
-    console.log(isOpen)
   }
 
   const parent = {
@@ -17,7 +16,6 @@ const Navbar = () => {
     open: {
       scale: 0.85
     },
-    closed: {}
   }
 
   const topBurger = {
@@ -26,7 +24,6 @@ const Navbar = () => {
       rotate: -45,
       translateY: 64
     },
-    closed: {}
   }
   const middleBurger = {
     initial: { opacity: 1},
@@ -34,7 +31,6 @@ const Navbar = () => {
       opacity: 0,
       delay: 0.2,
     },
-    closed:{}
   }
 
   const bottomBurger = {
@@ -44,7 +40,6 @@ const Navbar = () => {
       translateY: -64,
       transition: { delay: 0.2, duration: 0.3,}
     },
-    closed: {}
   }
 
   const crossLineVariants = {
@@ -56,7 +51,8 @@ const Navbar = () => {
       transition: { delay: 0.1, duration: 0.3 },
     },
     closed: {
-      translateX: -40,
+      // translateX: -40,
+      translateY: -50,
       transition: { delay: 0.1, duration: 0.3 },
     },
   }
@@ -68,7 +64,6 @@ const Navbar = () => {
       delay: 0.3,
       transition: { duration: 0.5}
     },
-    closed: {}
   }
 
   const rightCross = {
@@ -78,14 +73,13 @@ const Navbar = () => {
       delay: 0.3,
       transition: { duration: 0.5}
     },
-    closed: {}
   }
 
   return (
     <div className='fixed w-full bg-transparent flex justify-end z-[502] p-8'>
       <button className="relative group" onClick={handleClick}>
         <div className={`relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-transparent ring-0 ring-white hover:ring-4 hover:ring-primary-3 ${isOpen ? 'ring-opacity-30' : ''} duration-200 shadow-md`}>
-          <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={parent} className='flex flex-col justify-between w-[20px] h-[20px] origin-center overflow-hidden'>
+          <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={parent} className='flex flex-col justify-between w-[20px] h-[20px] overflow-hidden'>
             <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={topBurger} className='bg-secondary-3  h-[2px] w-7'></motion.div>
             <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={middleBurger} className='bg-secondary-3  h-[2px] w-7 rounded'></motion.div>
             <motion.div initial="initial" animate={isOpen ? "open" : "closed"} variants={bottomBurger} className='bg-secondary-3  h-[2px] w-7'></motion.div>

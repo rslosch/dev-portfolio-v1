@@ -1,5 +1,10 @@
 import React from 'react'
 
+/*
+Add second effect for colors to 'match' style of site better
+https://www.youtube.com/watch?v=QFjqxVMwIl8&list=PL4-IK0AVhVjMI45H5E9oE47wj-7AZLNnK&index=30&ab_channel=KevinPowell
+*/
+
 function PortfolioItem({ title, imgUrl, stack, link}) {
   return (
     <a 

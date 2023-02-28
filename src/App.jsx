@@ -1,18 +1,19 @@
 import { useState, useEffect, memo } from 'react'
-import Intro from './components/Intro'
-import Portfolio from './components/Portfolio'
-import Footer from './components/Footer'
-import blobsData from './data/blobs'
-import Blobs from './components/Blobs'
-import Cursor from './components/Cursor'
 
-// import { SunIcon, MoonIcon } from './data/icons'
+import Cursor from './components/Cursor'
+import Navbar from './components/Navbar'
+import Intro from './components/Intro'
+import Blobs from './components/Blobs'
+
+import blobsData from './data/blobs'
 
 function App() {
 
-	const displayBlobs = blobsData.map(blob => {
+	const displayBlobs = blobsData.map((blob, index) => {
 		return (
-			<Blobs 
+			<Blobs
+				key={index} 
+				id={index}
 				color1={blob.color1}
 				color2={blob.color2}
 				xPos={blob.xPos}
@@ -22,12 +23,11 @@ function App() {
 		)
 	})
   return (
-      <div className="relative text-secondary-1 bg-primary-gray-4 min-h-screen font-syne">
+      <div className="relative text-secondary-1 bg-black min-h-screen font-syne">
+		<Navbar />
 		<Cursor/>
 		{displayBlobs}
 		<Intro />
-		{/* <Portfolio /> */}
-		{/* <Footer /> */}
       </div>
   )
 }

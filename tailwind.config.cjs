@@ -17,6 +17,13 @@ module.exports = {
         '2/3': '66.666667%',
         '3/4': '75%',
       },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '200%': '200%',
+        '16': '4rem',
+      },
       colors: {
         "primary-purple-1": "#2F2235",
         "primary-purple-2": "#3F3244",

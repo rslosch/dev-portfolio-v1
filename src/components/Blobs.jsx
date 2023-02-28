@@ -19,7 +19,7 @@ const Blobs = ({dAttrValues, color1, color2, xPos, yPos}) => {
             <motion.path 
                 id="blob" fill="url(#gradient)"
                 animate={{x: xPos, y: yPos}}
-                transition={{times:[0.1,1], x:{duration: 60, repeat: Infinity, repeatType:"mirror"}, y:{duration: 60, repeat: Infinity, repeatType:"mirror"}, }}
+                transition={{times:[0.1,1], x:{duration: 120, repeat: Infinity, repeatType:"mirror"}, y:{duration: 120, repeat: Infinity, repeatType:"mirror"}, }}
             >
                 <animate attributeName='d'
                     dur="20000ms"

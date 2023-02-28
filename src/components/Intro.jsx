@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import StretchText from './StretchText'
 import AnimatedITextIntro from './AnimatedITextIntro'
 
 const Intro = () => { 
 
-
   return (
-    <div className="flex items-start justify-center flex-col text-center mx-16 pt-20 pb-6">
+    <div className="flex items-center justify-center flex-col text-center mx-16 pt-20 pb-6">
       <AnimatedITextIntro />
-      <StretchText text="welcome" indexStretch={[1,3,5]}/>
-      <StretchText text="projects" indexStretch={[0,1,4]}/>
-      <StretchText text="contact" indexStretch={[0,2,5]}/>
     </div>
   )
 }
@@ -27,3 +22,9 @@ After 4 years of accounting classes and a few internships, I decided to change m
 <br />
 During my time at FlatIron, I learned HTML, CSS, Javascript, React, and Ruby on Rails. Below you can find a couple fullstack projects I have worked on.
 </p> */}
+
+/**
+ *    <StretchText text="welcome" indexStretch={[1,3,5]}/>
+      <StretchText text="projects" indexStretch={[0,1,4]}/>
+      <StretchText text="contact" indexStretch={[0,2,5]}/>
+ */
