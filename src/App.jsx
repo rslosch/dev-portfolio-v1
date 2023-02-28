@@ -23,12 +23,12 @@ function App() {
 		)
 	})
   return (
-      <div className="relative text-secondary-1 bg-black min-h-screen font-syne">
-		<Navbar />
+    <div className="relative text-secondary-1 bg-black min-h-screen font-syne ">
 		<Cursor/>
 		{displayBlobs}
+		<Navbar />
 		<Intro />
-      </div>
+	</div>
   )
 }
 

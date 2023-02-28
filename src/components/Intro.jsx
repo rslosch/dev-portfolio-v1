@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import AnimatedITextIntro from './AnimatedITextIntro'
+import SvgText from './SvgText'
+import FullNameText from './FullNameText'
 
 const Intro = () => { 
 
   return (
-    <div className="flex items-center justify-center flex-col text-center mx-16 pt-20 pb-6">
-      <AnimatedITextIntro />
+    <div className="relative flex flex-col items-center px-8 md:px-32">
+      <SvgText />
+      <FullNameText />
     </div>
   )
 }
