@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import { motion } from 'framer-motion'
 
-const Cursor = () => {
+const Cursor = ({color1, color2}) => {
 
 	const [mousePositionLarge, setMousePositionLarge] = useState({
 		x:0,
@@ -60,8 +60,18 @@ const Cursor = () => {
 
   return (
     <div>
-        <motion.div variants={cursorLarge} animate="default" className={`pointer-events-none fixed border-2 ${isClicked ? "border-double" : "border-dotted"} border-primary-3 h-8 w-8 rounded-full z-[501]`}></motion.div>
-        <motion.div variants={cursorSmall} animate="default" className={`pointer-events-none fixed bg-primary-3 h-2 w-2 rounded-full z-[500]`}></motion.div>
+        <motion.div 
+          variants={cursorLarge} 
+          animate="default" 
+          className={`pointer-events-none fixed border-2 ${isClicked ? "border-double" : "border-dotted"} h-8 w-8 rounded-full z-[501]`}
+          style={{borderColor: color2 }}
+        ></motion.div>
+        <motion.div 
+          variants={cursorSmall} 
+          animate="default" 
+          className={`pointer-events-none fixed h-2 w-2 rounded-full z-[500]`}
+          style={{backgroundColor: color1 }}
+        ></motion.div>
     </div>
     )
 }
