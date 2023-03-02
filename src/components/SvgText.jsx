@@ -40,7 +40,6 @@ const SvgText = () => {
   return (
     <motion.svg 
       variants={mask} 
-      viewport={{ once: true }}
       initial="hidden" 
       animate="visible" 
       fill="rgb(0,0,0)" 

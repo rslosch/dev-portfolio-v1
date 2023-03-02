@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SvgText from './components/SvgText'
+import SvgTextStatic from './components/SvgTextStatic'
 import ProjectItem from './ProjectItem'
 
 import projectsData from './data/portfolio'
@@ -10,6 +11,8 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
 
     const [currentProject, setCurrentProject] = useState(false)
     const [showWelcome, setShowWelcome] = useState(true)
+    const [showWelcomeStatic, setShowWelcomeStatic] = useState(false)
+
 
     const parent = {
         initial: {
@@ -51,11 +54,12 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         const index = e.currentTarget.id
         if (index === currentProject) {
             setCurrentProject(false)
-            setShowWelcome(true)
+            setShowWelcomeStatic(true)
           } 
           else if(index >= 0 && index < projectsData.length) {
             setCurrentProject(index)
             setShowWelcome(false)
+            setShowWelcomeStatic(false)
           } 
           else {
             console.log(`Invalid project index: ${index}`)
@@ -91,6 +95,25 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                     color1={color1}
                     color2={color2}
                 />
+            )}
+              {showWelcomeStatic && (
+                <div className='lg:flex-1'>
+                    <SvgTextStatic />
+                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
+                        <div 
+                            className={`absolute h-full w-0.5 rounded bottom-0 bg-left bg-200%`}
+                            style={{
+                                backgroundImage: `linear-gradient(45deg, ${color1}, ${color2} , ${color1} )`
+                            }}
+                        ></div>
+                        <p className='ml-4 sm:ml-8'>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
+                        </p>
+                        <p className='ml-4 sm:ml-8'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eos omnis natus at nihil facere et explicabo rem cumque iure ullam, eius est officiis illum temporibus aut beatae veritatis. Ullam!
+                        </p>
+                    </span>
+                </div>
             )}
             {showWelcome && (
                 <div className='lg:flex-1'>
@@ -135,45 +158,10 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                 </motion.div>
                 <div className='relative flex flex-col lg:flex-1 p-8 border-tl font-space-grotesk text-base text-white z-[1]'>
                     {projectList}
-                    {/* <motion.a className="bg-transparent mb-4 pb-1 no-underline" href="" variants={parent} initial="initial" whileHover="hovered">
-                        <span className='relative inline-block no-underline'> 
-                            JobKanBan 
-                            <motion.span 
-                                className='absolute left-0 bottom-0 h-0.5 w-full bg-left bg-200%'
-                                style={{
-                                    backgroundImage: `linear-gradient(to right, ${color1}, ${color2} , ${color1} )`
-                                }}
-                                variants={child}
-                            ></motion.span>
-                        </span>
-                    </motion.a>
-                    <motion.a className="bg-transparent mb-4 pb-1 no-underline" href="" variants={parent} initial="initial" whileHover="hovered">
-                        <span className='relative inline-block no-underline'>
-                            MyQuotes App 
-                            <motion.span 
-                                className='absolute left-0 bottom-0 h-0.5 w-full bg-200%'
-                                style={{
-                                    backgroundImage: `linear-gradient(to right, ${color1}, ${color2} , ${color1} )`
-                                }}
-                                variants={child}
-                            ></motion.span>                       
-                        </span>
-                    </motion.a>
-                    <motion.a className="bg-transparent mb-4 pb-1 no-underline" href="" variants={parent} initial="initial" whileHover="hovered">
-                        <span className='relative inline-block no-underline'> 
-                            Cards for Insanity 
-                            <motion.span 
-                                className='absolute left-0 bottom-0 h-0.5 w-full bg-200%'
-                                style={{
-                                    backgroundImage: `linear-gradient(to right, ${color1}, ${color2} , ${color1} )`
-                                }}
-                                variants={child}
-                            ></motion.span>                        
-                        </span>
-                    </motion.a> */}
                 </div>
             </div>
         </div>
+        <div className='SPACER flex-1 max-w-[140px] min-w-[70px]'></div>
     </main>
   )  
 }
