@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import SvgText from './components/SvgText'
-import SvgTextStatic from './components/SvgTextStatic'
+import SvgText from './SvgText'
+import SvgTextStatic from './SvgTextStatic'
 import ProjectItem from './ProjectItem'
 
-import projectsData from './data/portfolio'
+import projectsData from '../data/portfolio'
 
 import { motion, AnimatePresence } from 'framer-motion'
 

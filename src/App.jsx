@@ -1,16 +1,13 @@
 import { useState, useEffect } from 'react'
 
 import Cursor from './components/Cursor'
-import ProjectDisplay from './ProjectDisplay'
+import ProjectDisplay from './components/ProjectDisplay'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import Intro from './components/Intro'
-import StretchText from './components/StretchText'
-import SvgText from './components/SvgText'
 
 import gradients from './data/gradients'
 
 import { motion } from 'framer-motion'
-
 
 function App() {
 
@@ -59,7 +56,6 @@ function App() {
 
 					<header className='flex justify-between'></header>
 					<ProjectDisplay color1={color1} color2={color2} setColorToggle={setColorToggle}/>
-					<footer></footer>
 
 					<div>
 						<svg 

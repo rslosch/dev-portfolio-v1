@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className="py-5 text-center">
 	    <div className="container max-w-screen-lg mx-auto">
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-end gap-2">
                 <a 
                     href="https://linkedin.com/in/robert-steven-losch"
-                    className="bg-primary-1 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
+                    className="bg-black p-2 font-semibold text-white inline-flex items-center space-x-2 rounded-full">
                     <svg
                         className="w-5 h-5 fill-current"
                         role="img"
