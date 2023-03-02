@@ -8,21 +8,28 @@ import StretchText from './components/StretchText'
 import SvgText from './components/SvgText'
 
 import gradients from './data/gradients'
-import { color } from 'framer-motion'
+
+import { motion } from 'framer-motion'
 
 
 function App() {
 
 	const [color1, setColor1] = useState('')
 	const [color2, setColor2] = useState('')
+	const [colorToggle, setColorToggle] = useState(false)
+	const [previousRandomIndex, setPreviousRandomIndex] = useState(-1)
 
 	useEffect(() => {
-		// randomly select a gradient from the gradients array
-		const randomGradient = gradients[Math.floor(Math.random() * gradients.length)]
-		// set color1 and color2 to the colors of the randomly selected gradient
+		let randomIndex = Math.floor(Math.random() * gradients.length)
+		while (randomIndex === previousRandomIndex) {
+		  randomIndex = Math.floor(Math.random() * gradients.length)
+		}
+		setPreviousRandomIndex(randomIndex)
+	  
+		const randomGradient = gradients[randomIndex]
 		setColor1(randomGradient.color1)
 		setColor2(randomGradient.color2)
-	}, [])
+	}, [colorToggle])
 
   return (	
 	<div className="fixed top-0 bottom-0 left-0 right-0 overflow-y-auto font-syne box-border bg-black">
@@ -45,9 +52,11 @@ function App() {
 					</svg>
 				</div>
 				<div className='p-4 sm:p-8 z-[2] select-none overflow-hidden flex-wrap basis-auto rounded '> 
+
 					<header className='flex justify-between'></header>
-						<ProjectDisplay color1={color1} color2={color2} />
+					<ProjectDisplay color1={color1} color2={color2} setColorToggle={setColorToggle}/>
 					<footer></footer>
+
 					<div>
 						<svg 
 							className='pointers-events-none w-[300px] h-[300px] absolute bottom-0 right-0'
