@@ -55,7 +55,7 @@ const ProjectItem = ({ project, color1, color2 }) => {
         exit="exit"
       >
           <h1 className='text-white text-3xl sm:text-6xl font-syne mb-2'> {project.title} </h1>
-          <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
+          <span className='relative font-spacegrotesk text-white border-box font-thin font-sm leading-6'>
               <div 
                   className={`absolute h-full w-0.5 rounded bottom-0 bg-left bg-200%`}
                   style={{

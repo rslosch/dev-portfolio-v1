@@ -133,7 +133,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                     exit="exit"
                 >
                     <SvgTextStatic />
-                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
+                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm leading-6'>
                         <div 
                             className={`absolute h-full w-0.5 rounded bottom-0 bg-left bg-200%`}
                             style={{
@@ -153,7 +153,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
             {showWelcome && (
                 <div className='lg:flex-1'>
                     <SvgText />
-                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
+                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm leading-6'>
                         <div 
                             className={`absolute h-full w-0.5 rounded bottom-0 bg-left bg-200%`}
                             style={{
