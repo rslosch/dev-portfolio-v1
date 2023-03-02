@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const ProjectItem = ({ project, color1, color2 }) => {
 
-    const parent = {
+    const parentHover = {
         initial: {
             scaleX: 1
         },
@@ -13,7 +13,7 @@ const ProjectItem = ({ project, color1, color2 }) => {
         },
     }
 
-    const child = {
+    const childHover = {
         initial: {
             backgroundPosition: "0%"
         },
@@ -21,8 +21,39 @@ const ProjectItem = ({ project, color1, color2 }) => {
             backgroundPosition: "100%",
         }
     }
+
+    const animateIn = {
+        initial: {
+            opacity: 0,
+            x: 400,
+            scaleX: "0%",
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            scaleX: "100%",
+            transition: {
+                duration: 0.2,
+            },
+        },
+        exit: {
+            opacity: 0,
+            x: 400,
+            scaleX: "0%",
+            transition: {
+                duration: 0.1,
+            },
+        }
+    }
+
   return (
-      <div className='lg:flex-1'>
+      <motion.div 
+        className='lg:flex-1'
+        variants={animateIn}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
           <h1 className='text-white text-3xl sm:text-6xl font-syne mb-2'> {project.title} </h1>
           <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
               <div 
@@ -35,7 +66,7 @@ const ProjectItem = ({ project, color1, color2 }) => {
                   {project.description}
               </p>
               <motion.button
-                variants={parent}
+                variants={parentHover}
                 initial="initial"
                 whileHover="hovered"
                 className='my-4'
@@ -47,13 +78,13 @@ const ProjectItem = ({ project, color1, color2 }) => {
                         style={{
                             backgroundImage: `linear-gradient(to right, ${color1}, ${color2} , ${color1} )`
                         }}
-                        variants={child}
+                        variants={childHover}
                     ></motion.span>
                   </a>
               </motion.button>
               <motion.button
                 className='my-4'
-                variants={parent}
+                variants={parentHover}
                 initial="initial"
                 whileHover="hovered"
               >
@@ -64,12 +95,12 @@ const ProjectItem = ({ project, color1, color2 }) => {
                         style={{
                             backgroundImage: `linear-gradient(to right, ${color1}, ${color2} , ${color1} )`
                         }}
-                        variants={child}
+                        variants={childHover}
                     ></motion.span> 
                   </a>
               </motion.button>
           </span>
-      </div>
+      </motion.div>
   )
 }
 export default ProjectItem

@@ -5,7 +5,7 @@ import ProjectItem from './ProjectItem'
 
 import projectsData from './data/portfolio'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
 
@@ -48,6 +48,31 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         }
     }
 
+    const animateIn = {
+        initial: {
+            opacity: 0,
+            x: -400,
+            scaleX: "0%",
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            // scaleX: 1,
+            scaleX: "100%",
+            transition: {
+                duration: 0.15,
+            },
+        },
+        exit: {
+            opacity: 0,
+            x: 400,
+            scaleX: "0%",
+            transition: {
+                duration: 0.1,
+            },
+        }
+    }
+
     const handleClick = (e) => {
         setColorToggle((colorToggle) => !colorToggle)
         // currentTarget is the element that the event listener is attached to, therefore preventing target from being the child element
@@ -55,15 +80,15 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         if (index === currentProject) {
             setCurrentProject(false)
             setShowWelcomeStatic(true)
-          } 
-          else if(index >= 0 && index < projectsData.length) {
+        } 
+        else if(index >= 0 && index < projectsData.length) {
             setCurrentProject(index)
             setShowWelcome(false)
             setShowWelcomeStatic(false)
-          } 
-          else {
+        } 
+        else {
             console.log(`Invalid project index: ${index}`)
-          }
+        }
     }
 
     const projectList = projectsData.map((project, index) => {
@@ -89,15 +114,24 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         style={{height: "calc(100% - 102px)", minHeight: "calc(100% - 102px)"}}
     >
         <div className='basis-1/2 lg:flex-auto'>
+        {/* add a key to ProjectItem so Animate Presence knows a different ProjectItem component is being rendered => knows previous ProjectItem component leaving DOM => fires exit animation */}
+        <AnimatePresence mode="wait">
             {projectsData[currentProject] && projectsData.length > 0 && currentProject !== false && (
                 <ProjectItem
+                    key={projectsData[currentProject].title}
                     project={projectsData[currentProject]}
                     color1={color1}
                     color2={color2}
                 />
-            )}
-              {showWelcomeStatic && (
-                <div className='lg:flex-1'>
+                )}
+            {showWelcomeStatic && (
+                <motion.div 
+                    className='lg:flex-1'
+                    variants={animateIn}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                >
                     <SvgTextStatic />
                     <span className='relative font-spacegrotesk text-white border-box font-thin font-sm'>
                         <div 
@@ -105,7 +139,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                             style={{
                                 backgroundImage: `linear-gradient(45deg, ${color1}, ${color2} , ${color1} )`
                             }}
-                        ></div>
+                            ></div>
                         <p className='ml-4 sm:ml-8'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
                         </p>
@@ -113,8 +147,9 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eos omnis natus at nihil facere et explicabo rem cumque iure ullam, eius est officiis illum temporibus aut beatae veritatis. Ullam!
                         </p>
                     </span>
-                </div>
+                </motion.div>
             )}
+            </AnimatePresence>
             {showWelcome && (
                 <div className='lg:flex-1'>
                     <SvgText />
@@ -135,7 +170,6 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                 </div>
             )}
         </div>
-
         <div className='SPACER flex-1 max-w-[130px] min-w-[90px]'></div>
 
         <div className='MAINPROJECTSRIGHT basis-1/3 lg:flex-auto'>
