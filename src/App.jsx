@@ -35,7 +35,11 @@ function App() {
 	<div className="fixed top-0 bottom-0 left-0 right-0 overflow-y-auto font-syne box-border bg-black">
 		<Cursor color1={color1} color2={color2} />
 		<div className="flex items-start lg:items-center justify-center h-full max-w-screen lg:max-h-screen lg:h-screen lg:overflow-hidden box-border leading-5">
-			<div className="relative flex items-center justify-between w-screen box-border max-w-[1280px] p-2 sm:p-6 h-screen lg:max-h-[800px] ">
+			<motion.div 
+				initial={{opacity: 0}} 
+				animate={{opacity:1, transition:{duration: 2}}} 
+				className="relative flex items-center justify-between w-screen box-border max-w-[1280px] p-2 sm:p-6 h-screen lg:max-h-[800px]"
+			>
 				<div className=''>
 					<svg 
 						className='pointers-events-none w-[300px] h-[300px] absolute top-0 left-0'
@@ -73,7 +77,7 @@ function App() {
 						</svg>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	</div>
   )
