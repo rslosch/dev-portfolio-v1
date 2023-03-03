@@ -110,7 +110,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
 
   return (
     <main 
-        className='flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between lg:pl-16 gap-2'
+        className='flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between lg:pl-16 box-border'
         style={{height: "calc(100% - 102px)", minHeight: "calc(100% - 102px)"}}
     >
         <div className='basis-1/2 lg:flex-auto'>
@@ -123,7 +123,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                     color1={color1}
                     color2={color2}
                 />
-                )}
+            )}
             {showWelcomeStatic && (
                 <motion.div 
                     className='lg:flex-1'
@@ -133,7 +133,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                     exit="exit"
                 >
                     <SvgTextStatic />
-                    <span className='relative font-spacegrotesk text-white border-box font-thin font-sm leading-6'>
+                    <span className='relative font-spacegrotesk text-white box-border font-thin font-sm leading-6'>
                         <div 
                             className={`absolute h-full w-0.5 rounded bottom-0 bg-left bg-200%`}
                             style={{
@@ -142,9 +142,6 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                             ></div>
                         <p className='ml-4 sm:ml-8'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
-                        </p>
-                        <p className='ml-4 sm:ml-8'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eos omnis natus at nihil facere et explicabo rem cumque iure ullam, eius est officiis illum temporibus aut beatae veritatis. Ullam!
                         </p>
                     </span>
                 </motion.div>
@@ -163,16 +160,13 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                         <p className='ml-4 sm:ml-8'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
                         </p>
-                        <p className='ml-4 sm:ml-8'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, eos omnis natus at nihil facere et explicabo rem cumque iure ullam, eius est officiis illum temporibus aut beatae veritatis. Ullam!
-                        </p>
                     </span>
                 </div>
             )}
         </div>
-        <div className='SPACER flex-1 max-w-[130px] min-w-[90px]'></div>
+        <div className='SPACER lg:flex-1 lg:max-w-[150px] lg:min-w-[90px]'></div>
 
-        <div className='MAINPROJECTSRIGHT basis-1/3 lg:flex-auto'>
+        <div className='MAINPROJECTSRIGHT lg:flex-auto'>
             <h2 className='text-3xl md:text-5xl my-6 text-white'> PROJECTS </h2>
             <div className='relative lg:flex-1'>
                 <motion.div 
@@ -186,8 +180,8 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                     animate = "animate"
                 >
                     <div className='absolute w-full h-full rounded-lg bg-black opacity-100'></div>
-                    <div className='absolute left-0 bottom-0 w-1/2 h-1/2 bg-black opacity-100'></div>
-                    <div className='absolute right-0 top-0 w-1/2 h-1/2 bg-black opacity-100'></div>
+                    <div className='absolute -left-2 bottom-0 w-1/2 h-1/2 bg-black opacity-100'></div>
+                    <div className='absolute right-0 -top-2 w-1/2 h-1/2 bg-black opacity-100'></div>
 
                 </motion.div>
                 <div className='relative flex flex-col lg:flex-1 p-8 border-tl font-space-grotesk text-base text-white z-[1]'>
@@ -195,7 +189,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                 </div>
             </div>
         </div>
-        <div className='SPACER flex-1 max-w-[140px] min-w-[70px]'></div>
+        <div className='SPACER lg:flex-1 lg:max-w-[140px] lg:min-w-[70px]'></div>
     </main>
   )  
 }
