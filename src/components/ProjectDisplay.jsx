@@ -113,7 +113,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         className='flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between lg:pl-16 box-border'
         style={{height: "calc(100% - 102px)", minHeight: "calc(100% - 102px)"}}
     >
-        <div className='h-full shrink-0 lg:flex-auto'>
+        <div className='h-[300px] md:h-[225px] shrink-0 lg:shrink lg:flex-auto'>
         {/* add a key to ProjectItem so Animate Presence knows a different ProjectItem component is being rendered => knows previous ProjectItem component leaving DOM => fires exit animation */}
         <AnimatePresence mode="wait">
             {projectsData[currentProject] && projectsData.length > 0 && currentProject !== false && (
@@ -166,7 +166,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
         </div>
         <div className='SPACER lg:flex-1 lg:max-w-[150px] lg:min-w-[90px]'></div>
         {/*Added absolute positioning for mobile... (temp fix) */}
-        <div className='MAINPROJECTSRIGHT absolute bottom-0 inset-x-6 lg:relative lg:flex-auto'>
+        <div className='MAINPROJECTSRIGHT flex-1/2 lg:flex-auto'>
             <h2 className='text-3xl md:text-5xl my-6 text-white'> PROJECTS </h2>
             <div className='relative lg:flex-1'>
                 <motion.div 
