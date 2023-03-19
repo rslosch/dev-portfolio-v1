@@ -141,7 +141,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                             }}
                             ></div>
                         <p className='ml-4 sm:ml-8'>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
+                            I'm Steven Losch, a front-end developer with a passion for creating intuitive and modern interfaces. I have developed using technologies like JavaScript, React, Ruby on Rails, and WebFlow. I am a curious learner and I am always looking for new opportunities to grow and improve my skills. 
                         </p>
                     </span>
                 </motion.div>
@@ -158,7 +158,7 @@ const ProjectDisplay = ({ color1, color2, setColorToggle }) => {
                             }}
                         ></div>
                         <p className='ml-4 sm:ml-8'>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, rem harum? Odit, saepe fugit ullam consequuntur, dignissimos assumenda sed ducimus maxime doloribus quae voluptatem officia odio deserunt perspiciatis excepturi quaerat!
+                            I'm Steven Losch, a front-end developer with a passion for creating intuitive and modern interfaces. I have developed using technologies like JavaScript, React, Ruby on Rails, and WebFlow. I am a curious learner and I am always looking for new opportunities to grow and improve my skills. 
                         </p>
                     </span>
                 </div>
